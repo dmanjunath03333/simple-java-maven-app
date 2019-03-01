@@ -4,8 +4,7 @@ agent any
    maven 'maven3.6.0'
     jdk 'java1.8.0'
   }
-  
-  
+    
   stages {
     stage('Build') {
           steps {
@@ -29,8 +28,7 @@ agent any
         sh "java -jar target/my-app-1.0-SNAPSHOT.jar"
       }
     }
-       
-   
+          
       
  
           
