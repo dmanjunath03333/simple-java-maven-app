@@ -11,12 +11,15 @@ agent any
             sh "mvn -B -DskipTests clean package"
           }
           }
-       
-    stages {
-      stage ('Deploy') {
+    stage ('Deploy') {
+      steps {
         sh "java -jar target/my-app-1.0-SNAPSHOT.jar"
       }
     }
+       
+   
+      
+ 
           
           
   }
