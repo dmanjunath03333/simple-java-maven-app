@@ -28,7 +28,14 @@ agent any
         sh "java -jar target/my-app-1.0-SNAPSHOT.jar"
       }
     }
-          
+    
+    stage ('Upload') {
+     
+      steps { 
+       
+        sh 'curl -X PUT -u admin:password -T target/my-app-1.0-SNAPSHOT.jar "http://34.220.250.148:8081/artifactory/libs-snapshot-local/my-app-1.0-SNAPSHOT.jar" '
+      }
+    }
       
  
           
