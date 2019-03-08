@@ -12,6 +12,17 @@ tools {
            sh "mvn -B -DskipTests clean install"
          }
         }   
+      stage ('Sonar'){
+         steps {
+          script {
+         sh 'mvn sonar:sonar \
+           -Dsonar.projectKey=key \
+          -Dsonar.host.url=http://34.211.218.252:9000 \
+           -Dsonar.login=bd632327e7f0e7f4c4a1675c398c64fd732620e8'  
+     
+          }
+         }
+      }
       stage('Building image') {
           steps {
           script {
@@ -19,7 +30,7 @@ tools {
                 }
                }
           }
-      
+     
       }
 
    
